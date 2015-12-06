@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Responsive Web Design - Girl Develop It</title>
+
+		<meta name="description" content="Slides for the Responsive Web Design curriculum.">
+		<meta name="author" content="Girl Develop It">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
+		<!-- dark editor--><link rel="stylesheet" href="lib/css/dark.css">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!-- If use the PDF print sheet so students can print slides-->
+
+		<link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h1>Responsive Web Design</h1>
+					<p>Girl Develop It!</p>
+				</section>
+
+				<!-- Section: Intro -->
+
+				<section>
+					<h2>What You Need</h2>
+					<ul>
+						<li>Slides: <a href="" target="_blank"></a></li> <!-- @TODO -->
+						<li>Browser: <a href="http://www.google.com/chrome/" target="_blank">Google Chrome</a></li>
+						<li>Text editor: <a href="https://atom.io/" target="_blank">Atom</a>, <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>, <a href="https://notepad-plus-plus.org/" target="_blank">Notepad++</a>, <a href="http://www.barebones.com/products/textwrangler/" target="_blank">TextWangler</a></li>
+						<li>Class files: <a href="https://github.com/amwelles/gdi-rwd" target="_blank">https://github.com/amwelles/gdi-rwd</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Welcome!</h2>
+					<p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+				</section>
+
+				<section>
+					<h2>Some "Rules"</h2>
+					<ul>
+						<li>We are here for you!</li>
+						<li>Every question is important</li>
+						<li>Help each other</li>
+						<li>Have fun!</li>
+					</ul>
+					<aside class="notes">
+						<p>No such thing as "stupid" questions</p>
+					</aside>
+				</section>
+
+				<!-- Section: Table of Contents -->
+
+				<section>
+					<h2>Jump To:</h2>
+					<ul>
+						<li><a href="#/5">Class 1</a></li>
+						<li><a href="#/19">Class 2</a></li>
+						<li><a href="#">Class 3</a></li>
+						<li><a href="#">Class 4</a></li>
+					</ul>
+				</section>
+
+				<!-- Section: Class 1 -->
+
+				<section>
+					<h2>Class 1</h2>
+					<p>Introduction to RWD</p>
+				</section>
+
+				<section>
+					<h2>Tell Us About Yourself</h2>
+					<ul>
+						<li>Who are you?</li>
+						<li>What do you do?</li>
+						<li>What do you hope to get out of this class?</li>
+						<li>What's your spirit animal?</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Tips</h2>
+					<ul>
+						<li>Don't copy and paste… no matter how tempting!</li>
+						<li>Raise your hand for questions and clarification.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>What is Responsive Web Design?</h2>
+					<p>And why you should care</p>
+					<aside class="notes">
+						<ul>
+							<li>Looks great on all devices</li>
+							<li>We can't fine-tune for every device (there are literally thousands of differently-sized devices)</li>
+							<li>Mobile users make up a large percentage of the internet's audience</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>What Are the Alternatives?</h2>
+					<p>And why RWD is preferred</p>
+					<aside class="notes">
+						<ul>
+							<li>Browser detection to redirect users to a mobile version (e.g. m.example.com)</li>
+							<li>Don't have to maintain two sets of code</li>
+							<li>Don't have to maintain more database fields (mobile &amp; desktop)</li>
+							<li>Easier to test, since we're only working with one set of styles</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Where Do We Start?</h2>
+					<p>Understanding media queries</p>
+				</section>
+
+				<section>
+					<h2>Media Queries</h2>
+					<pre>
+						<code class="css">
+@media screen and (min-width: 768px) {
+  /* window >= 768 pixels wide */
+}
+
+@media screen and (max-width: 768px) {
+  /* window <= 768 pixels wide */
+}
+						</code>
+					</pre>
+					<p><small><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries" target="_blank">https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries</a></small></p>
+				</section>
+
+				<section>
+					<h2>Metatag</h2>
+					<pre>
+						<code class="html">
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+						</code>
+					</pre>
+					<p><small><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag" target="_blank">https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag</a></small></p>
+					<aside class="notes">
+						<p>Goes in the &lt;head> tag</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>How Do I Handle...?</h2>
+					<p>Solutions to some of the most common problems</p>
+				</section>
+
+				<section>
+					<h2>Images</h2>
+					<pre>
+						<code class="css">
+img {
+	max-width: 100%;
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Sidebar</h2>
+					<ul>
+						<li>Put the main content first in the markup</li>
+						<li>Stack columns until you reach larger screen sizes</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Navigation</h2>
+						<ul>
+							<li>Create unordered lists to contain your links</li>
+							<li>For horizontal navigation, float list items</li>
+						</ul>
+					</section>
+					<section>
+						<h3>CSS Toggle Menu</h3>
+						<pre>
+							<code class="html">
+&lt;nav>
+  &lt;a href="#" id="toggle">Menu&lt;/a>
+  &lt;ul id="menu">
+    &lt;li>&lt;a href="#home">Home&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="#about">About&lt;/a>&lt;/li>
+  &lt;/ul>
+&lt;/nav>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>CSS Toggle Menu</h3>
+						<pre>
+							<code class="css">
+#menu {
+  display: none;
+}
+
+#toggle:focus + #menu {
+  display: block;
+}
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Tables</h2>
+					<ul>
+						<li>Create a wrapper element</li>
+						<li>Make your table scrollable (on the x-axis)</li>
+						<li>Make it obvious that there's more to the table</li>
+						<li>Remember to remove those styles on larger screens</li>
+					</ul>
+					<p><small><a href="http://codepen.io/anon/pen/GJRVoZ" target="_blank">http://codepen.io/anon/pen/GJRVoZ</a></small></p>
+				</section>
+
+				<section>
+					<h2>Q&amp;A</h2>
+					<ul>
+						<li>What questions do you have?</li>
+						<li>Do you need further clarification?</li>
+						<li>Have anything you’d like to show the class?</li>
+						<li>What do you want to learn next week?</li>
+					</ul>
+				</section>
+
+				<!-- Section: Class 2 -->
+
+				<section>
+					<h2>Class 2</h2>
+					<p>Design to code</p>
+				</section>
+
+				<section>
+					<h2>Media Query Review</h2>
+					<pre>
+						<code class="css">
+@media screen and (min-width: X) {
+  /* greater than or equal to X */
+}
+
+@media screen and (max-width: X) {
+  /* less than or equal to X */
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Responsive Design Basics</h2>
+					<ul>
+						<li>Design for mobile first</li>
+						<li>Single column layouts will always be easier</li>
+						<li>Add media query breakpoints when the design starts looking "off"</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Blocking Out a Design</h2>
+					<p>Using a pen or pencil, block out each element on the page</p>
+					<p><a href="http://amwelles.github.io/learn/images/blocking-example.png" target="_blank"><img src="http://amwelles.github.io/learn/images/blocking-example.png" alt="Blocking example"></a></p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Markup</h2>
+						<ul>
+							<li>Write markup, but don't worry about content</li>
+							<li>Ignore design elements and think about your various blocks</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Markup Example</h2>
+						<pre>
+							<code class="html">
+&lt;div class="section--hero">
+	&lt;nav class="nav--main">
+		&lt;ul>
+			&lt;li>&lt;a href="#">Lorem&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">Inventore&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">Aliquid&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">Voluptates&lt;/a>&lt;/li>
+		&lt;/ul>
+	&lt;/nav>
+	&lt;div class="value-prop">
+		&lt;h1>Lorem ipsum dolor sit&lt;/h1>
+		&lt;p>Lorem ipsum dolor sit amet, consectetur&lt;/p>
+		&lt;button>Lorem ipsum&lt;/button>
+	&lt;/div>
+	&lt;ul class="social">
+		&lt;li>&lt;a href="#">Twitter&lt;/a>&lt;/li>
+		&lt;li>&lt;a href="#">Flickr&lt;/a>&lt;/li>
+		&lt;li>&lt;a href="#">Dribbble&lt;/a>&lt;/li>
+	&lt;/ul>
+&lt;/div>
+							</code>
+						</pre>
+					</section>
+				</section>
+
+			</div>
+  		<footer>
+        <div class="copyright">
+          Responsive Web Design --
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>
+      </footer>
+		</div>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
