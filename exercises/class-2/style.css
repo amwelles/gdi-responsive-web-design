@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans";
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+button {
+  padding: 1em 2em;
+  text-transform: uppercase;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  background: #4a9c84;
+  cursor: pointer;
+}
+
+button:hover {
+  background: white;
+  color: #4a9c84;
+}
+
+.section--hero {
+  background: url("http://i.imgur.com/OCIp7CK.jpg");
+  background-size: cover;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.section--hero a {
+  color: white;
+}
+
+.nav--main ul,
+.nav--main li,
+.social,
+.social li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav--main {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.nav--main a {
+  display: block;
+  padding: .5em 1.5em;
+}
+
+.nav--main a:hover {
+  background: white;
+  color: #4a9c84;
+}
+
+.value-prop {
+  padding: 2em 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.social a:hover {
+  color: #4a9c84;
+}
+
+.social li + li {
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 500px) {
+
+  .nav--main ul {
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+@media screen and (min-width: 850px) {
+
+  .value-prop {
+    padding: 100px 0;
+  }
+
+}
