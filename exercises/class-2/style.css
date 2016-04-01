@@ -1,3 +1,5 @@
+/* BEGIN GLOBAL STYLES */
+
 body {
   margin: 0;
   padding: 0;
@@ -82,6 +84,9 @@ button:hover {
   margin-left: 10px;
 }
 
+/* END GLOBAL STYLES */
+
+/*once we hit 500px wide*/
 @media screen and (min-width: 500px) {
 
   .nav--main ul {
@@ -91,6 +96,7 @@ button:hover {
 
 }
 
+/* once we hit 850px wide*/
 @media screen and (min-width: 850px) {
 
   .value-prop {
