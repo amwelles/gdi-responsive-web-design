@@ -457,6 +457,245 @@ img {
 				</section>
 
 				<section>
+					<h2>How does it work?</h2>
+				</section>
+
+				<section>
+					<h3>Flexbox basics</h3>
+					<br>
+					<p>The flexbox layout consists of:</p>
+					<ul>
+						<li>The parent (the <strong>flex container</strong>)</li>
+						<li>its immediate children (the <strong>flex items</strong>).</li>
+					</ul>
+					<br><br>
+					<img src="img/css3-flexbox-model.jpg" alt="">
+				</section>
+
+				<section>
+					<h3>Good to know:</h3>
+					<p>By default, flexbox items are displayed in a row, left-to-right (ltr).</p>
+				</section>
+
+				<section>
+					<h2>Let's develop it!</h2>
+					<p>Copy the HTML below into a new pen in <a href="http://www.codepen.io">Codepen.io</a></p>
+					<br>
+					<pre><code class="html">
+	&lt;div class="flex-container">
+		&lt;div class="flex-item">flex item 1&lt;/div>
+		&lt;div class="flex-item">flex item 2&lt;/div>
+		&lt;div class="flex-item">flex item 3&lt;/div>
+	&lt;/div>
+
+</code></pre>
+				<br>
+				<p>We are setting up a flex container with three flex items.</p>
+				</section>
+
+				<section>
+					<p>Now copy this CSS. </p>
+					<p>We're giving our items a width and height (and background color so we can see them).</p>
+					<br>
+				<pre><code class="css">
+	.flex-container {
+	}
+
+	.flex-item {
+	    background-color: #bada55;
+	    width: 100px;
+	    height: 100px;
+	    margin: 10px;
+	}
+				</code></pre>
+				</section>
+
+				<section>
+					<h3>Make it Flex!</h3>
+					<br>
+					<p>To use the flexbox layout, simply set the <code>display</code> property on the parent element. </p>
+					<br>
+					<pre><code class="css">
+	display: flex;
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>What happened?</h2>
+					<p>All the items are now flexbox items, and they are aligned LTR in a straight line. Now let's finish our container:</p>
+					<br>
+					<ul>
+						<li>Give it a background color (A nice one, like #ddd)</li>
+						<li>Give it a width of 500px</li>
+						<li>Give it a height of 300px</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Flexbox container properties</h2>
+					<p>We're going to split up the flexbox properties. The following properties apply to the container.</p>
+				</section>
+
+				<section>
+					<h3>flex-direction</h3>
+					<p>Display items in a line horizontally or vertically. Values:</p>
+					<ul>
+						<li><strong>row:</strong> LTR</li>
+						<li><strong>row-reverse:</strong> RTL</li>
+						<li><strong>column:</strong>Top to bottom</li>
+						<li><strong>column-reverse:</strong>Bottom to top</li>
+					</ul>
+					<br><br>
+					<p>Let's try it on our flex container:</p>
+					<br>
+					<pre><code class="css">
+	flex-direction: row-reverse;
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>flex-wrap</h3>
+					<p>Flex will ignore our items' width by default. Add three more flex items. What happened?</p>
+					<br>
+					<p>Let's make them wrap. Add this to the flex container:</p>
+					<br>
+					<pre><code class="css">
+	flex-wrap: wrap;
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>flex-flow</h3>
+					<p>Shorthand for flex-direction and flex-wrap. Flex direction always goes first.</p>
+					<br>
+					<pre><code class="css">
+	flex-flow: column nowrap;
+
+	- or -
+
+	flex-flow: row wrap;
+				</code></pre>
+				</section>
+
+				<section>
+					<h3>justify-content</h3>
+					<p>Aligns items along the main axis (x-axis). Values:</p>
+					<ul>
+						<li><strong>flex-start:</strong> Align to the left</li>
+						<li><strong>flex-end:</strong> Align to the right</li>
+						<li><strong>center:</strong> Center of the container</li>
+						<li><strong>space-between:</strong> Distributed, no space left and right</li>
+						<li><strong>space-around:</strong> Every item has same margin around</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>justify-content</h3>
+					<p>Try it out! Delete the three extra items so there are only three. Add the justify-content property to the container.</p>
+					<br>
+					<pre><code class="css">
+	justify-content: flex-end;
+
+	- or -
+
+	justify-content: space-between;
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>align-items</h3>
+					<p>Same as justify-content, but along the cross axis (y-axis). Also allows for vertical stretching of items:</p>
+					<ul>
+						<li><strong>stretch:</strong> Items fill the whole height (or width) of their container. Items must not have a height!</li>
+						<li><strong>flex-start:</strong> Align to top</li>
+						<li><strong>flex-end:</strong> Align to bottom</li>
+						<li><strong>center:</strong> Center vertically <strong>(!)</strong></li>
+						<li><strong>baseline:</strong> Text baselines are aligned</li>
+					</ul>
+					<br><br>
+					<img src="img/flexbox-align-items-baseline.jpg" alt="">
+				</section>
+
+				<section>
+					<h3>align-items</h3>
+					<p>Try it out: change the alignment of your elements to stretch:</p>
+					<br>
+					<pre><code class="css">
+	align-items: stretch;
+					</code></pre>
+					<br>
+					<p>What happened? Now take the height off of hour items and try again...</p>
+				</section>
+
+				<section>
+					<h2>Flexbox item properties</h2>
+					<p>Here are the properties that apply to the flex items</p>
+				</section>
+
+				<section>
+					<h3>order</h3>
+					<p>Allows you to change the order in which items appear, regardless their order in the markup.</p>
+					<p>The value is any integer. Example:</p>
+					<br>
+					<img src="img/flexbox-order.jpg" alt="">
+				</section>
+
+				<section>
+					<h3>flex-grow</h3>
+					<p>This property specifies the flex grow factor, which determines how much the flex item will grow relative to the rest of the flex items in the flex container when positive free space is distributed.</p>
+
+					<p>Make sense?</p>
+				</section>
+
+				<section>
+					<p><strong>Example: </strong>All items have the same value for flex-grow:</p>
+
+					<img src="img/flexbox-flex-grow-1.jpg" alt="">
+					<br><br>
+					<p>Here, the second items takes up more room relative to its neighbors:</p>
+
+					<img src="img/flexbox-flex-grow-2.jpg" alt="">
+				</section>
+
+				<section>
+					<h3>flex-shrink</h3>
+					<p>Simiar to flex-grow. If the item has a set width which is being overwritten by flex, <code>flex-shrink: 0</code> will allow it to keep its original width.</p>
+					<p>The auto (the default value) keyword means "look at my width or height property"</p>
+				</section>
+
+				<section>
+					<h3>flex-shrink</h3>
+					<p>Tyr it out: Add three more items so they all get squished, and add a class to one of them.</p>
+					<p>Next, set that new class to <code>flex-shrink: 0;</code>. What happened?</p>
+
+				</section>
+
+				<section>
+					<h3>flex-basis</h3>
+					<p>Takes same values as width or height. It sets the initial size of a flex item before space is distributed among the other items.</p>
+					<br>
+					<p>Try it:</p>
+					<ul>
+						<li>Make it so you have 5 flex items</li>
+						<li>Give one of them a new class</li>
+						<li>Set that item's flex-basis to 300px</li>
+					</ul>
+					<br><br>
+					<p>What happened?</p>
+				</section>
+
+				<section>
+					<h3>flex</h3>
+					<p>Put it all together! <code>flex</code> is a shorthand property for <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>:</p>
+					<br>
+					<pre><code class="css">
+	.flex-item {
+	  flex: 0 0 auto
+	}
+					</code></pre>
+				</section>
+
+				<section>
 					<h2>Q&amp;A</h2>
 					<ul>
 						<li>What questions do you have?</li>
